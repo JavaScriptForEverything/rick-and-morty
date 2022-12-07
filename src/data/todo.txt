@@ -1,0 +1,23 @@
+colors:
+	. black 			: #191d29
+	. green 			: #9dfe00
+	. dodgerblue 	: #14d9e5
+
+
+Font-Size:
+								Web 									Mobile
+	. Heading 		: 128 px 							: 40 px
+	. Text 		 		: 24 px 							: 20 px
+	. subText 		: 20 px 							: 16 px
+	. caption 		: 16 px 							: 10 px
+
+
+Font-Weight: 
+	. Regular 		: Very light
+	. Medium 			: Light
+	. SemiBold 		: Regular
+	. Bold 				: Bold
+
+
+Font-Face:
+	. TT Travels
