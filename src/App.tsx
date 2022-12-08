@@ -1,14 +1,23 @@
+
 // import logo from './logo.svg';
 import './App.css';
 
-import Home from './components/home'
-// import DeleteMe from './delete';
+// import Home from './components/home'
+import Cast from './components/cast'
+
+
+// import DeleteMe from './deleteMe'
+
+import CssBaseline from '@mui/material/CssBaseline'
 
 const App = () => {
 
 	return (
 		<>
-			<Home />
+			<CssBaseline />
+			{/* <Home /> */}
+			<Cast />
+
 			{/* <DeleteMe /> */}
 		</>
 	)

@@ -3,6 +3,8 @@ colors:
 	. green 			: #9dfe00
 	. dodgerblue 	: #14d9e5
 
+	. cyne 				: #15ddea
+
 
 Font-Size:
 								Web 									Mobile
