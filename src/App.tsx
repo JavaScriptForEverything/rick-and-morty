@@ -3,7 +3,8 @@
 import './App.css';
 
 // import Home from './components/home'
-import Cast from './components/cast'
+// import Cast from './components/cast'
+import DetailsPage from './components/details'
 
 
 // import DeleteMe from './deleteMe'
@@ -16,7 +17,8 @@ const App = () => {
 		<>
 			<CssBaseline />
 			{/* <Home /> */}
-			<Cast />
+			{/* <Cast /> */}
+			<DetailsPage />
 
 			{/* <DeleteMe /> */}
 		</>
