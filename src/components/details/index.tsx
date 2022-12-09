@@ -1,9 +1,9 @@
 import Header from '../home/header'
-import BoxContainer from './boxContainer'
 
 import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
+import BoxWrapper from './boxWrapper'
 
 const section_1_items = [
 	{
@@ -39,6 +39,8 @@ const section_2_3_items = [
 
 const DetailsPage = () => {
 
+	const avatarWidth = 200
+
 	return (
 		<>
 		<Box sx={{
@@ -65,17 +67,37 @@ const DetailsPage = () => {
 								color: '#15ddea',
 							}}
 						>Rick Sanchez</Typography>
-						<BoxContainer sx={{ m: 0 }}>
-							<img 
-								src='/images/screenshot.jpg'
-								alt='/images/screenshot.jpg'
-								width={'100%'}
-								height={'100%'}
-								style={{
-									borderRadius: 4
-								}}
-							/>
-						</BoxContainer>
+						<Box sx={{
+							display: 'flex',
+							justifyContent: 'space-evenly',
+							alignItems: 'center',
+							// gap: 5
+							
+						}}>
+							<BoxWrapper gradientDegree={135} sx={{
+								// width: 250,
+								// height: 250
+								ml: { xs: 0, sm:  `${avatarWidth / 2 }px` }
+							}} >
+								<img 
+									src='/images/screenshot.jpg'
+									alt='/images/screenshot.jpg'
+									// width={'100%'}
+									// height={'100%'}
+									width={avatarWidth}
+									height={avatarWidth}
+									style={{
+										borderRadius: 4
+									}}
+								/>
+							</BoxWrapper>
+							<Box sx={{
+								borderRight: '1px solid #9dfe0088',
+								height: `${ avatarWidth - avatarWidth / 8 }px`,
+								display: { xs: 'none', sm: 'block' },
+								ml: `${avatarWidth / 2 }px`
+							}} />
+						</Box>
 					</Box>
 			</Grid>
 				<Grid item xs={12} sm={6}>
@@ -87,65 +109,58 @@ const DetailsPage = () => {
 							gap: 4
 						}}>
 							{section_1_items.map(({ src, status, title }) => (
-									<Box key={title} sx={{
-										flex: 1,
-										border: '1px solid dodgerblue',
-										borderRadius: 2,
-										p: 1,
-									}} >
-										<Box sx={{ width: 	{ xs: 8*4, sm: 8*6 } }} >
-											<img src={src} alt={src} width='100%' />	
+									<BoxWrapper key={title} 
+										sx={{ flex: 1, }} 
+										gradientDegree={
+											Math.floor( Math.random() * 360 )
+										}
+									>
+										<Box>
+											<Box sx={{ width: 	{ xs: 8*4, sm: 8*6 } }} >
+												<img src={src} alt={src} width='100%' />	
+											</Box>
+											<Typography sx={{ fontSize: { xs: 10, sm: 16 } }}>{status}</Typography>
+											<Typography sx={{ fontSize: { xs: 20, sm: 24 } }}>{title}</Typography>
 										</Box>
-										<Typography sx={{ fontSize: { xs: 10, sm: 16 } }}>{status}</Typography>
-										<Typography sx={{ fontSize: { xs: 20, sm: 24 } }}>{title}</Typography>
-									</Box>
+									</BoxWrapper>
 							))}
 						</Box>
 
 						<Box id='item-2-3'>
 							{section_2_3_items.map( item => (
-								<Box key={item.title} sx={{
-									flex: 1,
-									border: '1px solid dodgerblue',
-									borderRadius: 2,
-									p: 1,
-									mt: 4
-								}} >
-									<Box sx={{ width: 	{ xs: 8*4, sm: 8*6 } }} >
-										<img 
-											src={item.src}
-											alt={item.src}
-											width='100%' 
-										/>	
-									</Box>
-									<Typography sx={{ fontSize: { xs: 10, sm: 16 } }}>{item.status}</Typography>
-									<Box sx={{
-										flex: 1,
-										display: 'flex',
-										justifyContent: 'space-between',
-										alignItems: 'center'
-									}}>
-										<Typography sx={{ fontSize: { xs: 20, sm: 24 } }}>{item.title}</Typography>
-										<Box sx={{ width: { xs: 8*3, sm: 8*4 }, mr: 2 }} >
+								<BoxWrapper key={item.title} sx={{ flex: 1, mt: 4 }} gradientDegree={180}>
+									<Box key={item.title} >
+										<Box sx={{ width: 	{ xs: 8*4, sm: 8*6 } }} >
 											<img 
-												src={item.icon}
-												alt={item.icon}
+												src={item.src}
+												alt={item.src}
 												width='100%' 
 											/>	
 										</Box>
+										<Typography sx={{ fontSize: { xs: 10, sm: 16 } }}>{item.status}</Typography>
+										<Box sx={{
+											display: 'flex',
+											justifyContent: 'space-between',
+											alignItems: 'center',
+										}}>
+											<Typography sx={{ fontSize: { xs: 20, sm: 24 } }}>{item.title}</Typography>
+											<Box sx={{ width: { xs: 8*3, sm: 8*4 }, mr: 2 }} >
+												<img 
+													src={item.icon}
+													alt={item.icon}
+													width='100%' 
+												/>	
+											</Box>
+										</Box>
 									</Box>
-								</Box>
+								</BoxWrapper>
 							))}
+
 						</Box>
 
 						<Box id='item-4'>
-								<Box sx={{
-									flex: 1,
-									border: '1px solid dodgerblue',
-									borderRadius: 2,
-									p: 1,
-									my: 4
-								}} >
+							<BoxWrapper sx={{ flex: 1, mt: 4 }} gradientDegree={180}>
+								<Box >
 									<Box sx={{ width: 	{ xs: 8*4, sm: 8*6 } }} >
 										<img 
 											src='/media_asset/cast_details/Icons/png/Episode.png'
@@ -184,6 +199,7 @@ const DetailsPage = () => {
 										</Box>
 									</Box>
 								</Box>
+							</BoxWrapper>
 
 						</Box>
 					</Box>
