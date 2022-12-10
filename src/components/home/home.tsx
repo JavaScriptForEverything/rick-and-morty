@@ -29,12 +29,13 @@ const SectionContainer = () => {
 			</Box>
 
 			<Box sx={{ p: 1, mt: 8 }}>
-				<Typography variant='h6' paragraph>Episodes</Typography>
+				<Typography sx={{ fontSize: { xs: 16, sm: 20 } }}>Episodes</Typography>
 				<EpisodeContainer />
 			</Box>
 
+			{/* [ LocationContainer is copied versiom of EpisodeContainer ] */}
 			<Box sx={{ p: 1, mt: 8 }}>
-				<Typography variant='h6' paragraph>Locations</Typography>
+				<Typography sx={{ fontSize: { xs: 16, sm: 20 } }}>Locations</Typography>
 				<LocationContainer />
 			</Box>
 		</Box>

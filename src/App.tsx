@@ -2,7 +2,7 @@
 // import logo from './logo.svg';
 import './App.css';
 
-// import Home from './components/home'
+import Home from './components/home'
 import Cast from './components/cast'
 // import DetailsPage from './components/details'
 
@@ -16,8 +16,8 @@ const App = () => {
 	return (
 		<>
 			<CssBaseline />
-			{/* <Home /> */}
-			<Cast />
+			<Home />
+			{/* <Cast /> */}
 			{/* <DetailsPage /> */}
 
 			{/* <DeleteMe /> */}

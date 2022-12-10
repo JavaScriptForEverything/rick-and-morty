@@ -1,5 +1,5 @@
 import Header from './header'
-import Footer from './footer'
+// import Footer from './footer'
 import HeroTitle from './heroTitle'
 
 import CssBaseline from '@mui/material/CssBaseline'
@@ -25,7 +25,7 @@ const Home = () => {
 			<SectionContainer />
 
 
-			<Footer />
+			{/* <Footer /> */}
 
 		</Box>
 	)

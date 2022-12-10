@@ -5,17 +5,6 @@ import ArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft'
 import ArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 import { useEffect, useState } from 'react'
 
-const arrowRightStyle = {
-	position: 'absolute',
-	right: 0,
-	top: 'calc(50% - 26px)',
-	zIndex: 1,
-
-	color: 'green',
-	backgroundColor: 'white',
-}
-
-
 
 type Props = {
 	containerId: string,
@@ -30,6 +19,8 @@ const ClipContainerWrapper = (props: Props) => {
 	} = props
 
 	const [ container, setContainer ] = useState<HTMLElement | null>(null)
+	const [ scrollLeft, setScrollLeft ] = useState(0)
+	
 
 	console.log(container?.scrollLeft)
 
@@ -44,23 +35,27 @@ const ClipContainerWrapper = (props: Props) => {
 		if(!container) return
 
 		container.scrollBy(x, 0)
+		setScrollLeft(x)
 	}
 	
 
 	return (
 		<Box sx={{ position: 'relative' }}>
 
-			{false && (
-				<IconButton sx={{ ...arrowRightStyle, left: 0 }} onClick={moveTo(-step)} >
+			{/* {!!scrollLeft && ( */}
+				<IconButton sx={{ arrowLeftStyle }} onClick={moveTo(-step)} >
 					<ArrowLeftIcon />
 				</IconButton>
-			)}
+			{/* )} */}
 
 			<IconButton sx={arrowRightStyle} onClick={moveTo(step)} >
 				<ArrowRightIcon />
 			</IconButton>
 
-			<Box id={containerId} sx={{ display: 'flex', gap: 2, overflowX: 'auto' }}>
+			<Box id={containerId} sx={{ display: 'flex', gap: 2, 
+				overflowX: 'auto',
+				scrollMarginTop: 2
+			}}>
 				{children}
 			</Box>
 
@@ -68,3 +63,30 @@ const ClipContainerWrapper = (props: Props) => {
 	)
 }
 export default ClipContainerWrapper
+
+const arrowLeftStyle = {
+	position: 'absolute',
+	zIndex: 1,
+	top: 'calc(50% - 26px)',
+	left: 0,
+	// right: 0,
+	// width: 20,
+	// height: 20,
+
+	border: '10px solid red',
+
+	color: 'green',
+	backgroundColor: 'white',
+}
+
+
+const arrowRightStyle = {
+	position: 'absolute',
+	right: 0,
+	top: 'calc(50% - 26px)',
+	zIndex: 1,
+
+	color: 'green',
+	backgroundColor: 'white',
+}
+

@@ -5,11 +5,11 @@ import Box from '@mui/material/Box'
 
 type Props = {
 	url: string,
-	primary: string,
+	primary?: string,
 	title?: string,
 	sx?: SxProps
 }
-export const Cast = ({ sx={}, url, primary, title }: Props) => {
+export const Cast = ({ sx={}, url, primary='', title }: Props) => {
 
 	return (
 			<Box sx={sx}>
@@ -18,13 +18,16 @@ export const Cast = ({ sx={}, url, primary, title }: Props) => {
 					src={url}
 					alt='cast url'
 					width='100%'
-					height='100%'
+					// width={200}
+					height={140}
 					style={{ borderRadius: 5 }}
 					title={title}
 				/>
-				<Box sx={{ my: 2 }}>
-					<Typography color='inherit'>{primary}</Typography>
-				</Box>
+				{!!primary && (
+					<Box sx={{ my: 0 }}>
+						<Typography color='inherit'>{primary}</Typography>
+					</Box>
+				)}
 			</Box>
 	)
 }

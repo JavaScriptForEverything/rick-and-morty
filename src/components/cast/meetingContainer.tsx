@@ -11,13 +11,16 @@ export const MeetingContainer = () => {
 	return (
 		<Box>
 
-			<Grid container spacing={6}>
+			<Grid container spacing={2}>
 				{[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map(cast => (
-					<Grid key={cast} item xs={6} sm={4} md={3}>
+					<Grid key={cast} item xs={6} sm={4} md={2}>
 						<BoxWrapper 
 							padding={1}
 							clipPath= 'polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%)'
 							gradientDegree={135}
+							sx={{
+								width: 200
+							}}
 						>
 							<Cast key={cast} 
 								url='/images/screenshot.jpg' 

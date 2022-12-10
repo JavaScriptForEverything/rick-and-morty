@@ -1,25 +1,37 @@
 import { Episode } from '../component'
-import ClipContainerWrapper from '../../../clipContainerWrapper'
 
 import Box from '@mui/material/Box'
+import BoxWrapper from '../../../details/boxWrapper'
+import ScrollWrapper from '../../scrollWrapper'
 
 
 export const EpisodeContainer = () => {
 
 	return (
-		<Box>
+		<ScrollWrapper sx={{ mt: 2 }}>
 
-			<ClipContainerWrapper containerId='episodeContainer'>
+			<Box sx={{
+				display: 'flex',
+				gap: 2,
+				overflowX: 'auto'
+			}}>
+
 				{[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map(episode => (
-					<Box key={episode} sx={{ flexShrink: 0 }}>
-						<Episode 
-							primary={`title ${episode}`}
-							subTitle={`SubTitle ${episode}`}
-						/>
-					</Box>
+					<BoxWrapper key={episode} 
+						clipPath= 'polygon(0 0, 100% 0, 100% 60%, 80% 100%, 0 100%)'
+						gradientDegree={135}
+						sx={{
+							minWidth: 250,
+							textTransform: 'uppercase',
+						}}
+					> 
+							<Episode 
+								primary={`title ${episode}`}
+								subTitle={`SubTitle ${episode}`}
+							/>
+					</BoxWrapper> 
 				))}
-			</ClipContainerWrapper>
-
-		</Box>
+			</Box>
+		</ScrollWrapper>
 	)
 }

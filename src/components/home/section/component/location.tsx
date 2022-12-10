@@ -12,12 +12,8 @@ export const Location = ({ primary, subTitle }: Props) => {
 
 	return (
 		<>
-			<ClipContainer width={200} height={100}> 
-				<Box sx={{ m: 1, }}>
-						<Typography color='inherit'>{primary}</Typography>
-						<Typography color='inherit'>{subTitle}</Typography>
-				</Box>
-			</ClipContainer>
+			<Typography color='inherit'>{primary}</Typography>
+			<Typography color='inherit'>{subTitle}</Typography>
 		</>
 	)
 }
