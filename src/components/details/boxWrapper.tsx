@@ -10,29 +10,33 @@ type Props = {
 	borderRadius?: number,
 	gradientColors?: string[] | number[],
 	gradientDegree?: number,
+	clipPath?: string 
 }
 const BoxWrapper = (props: Props) => {
 
 	const {
 		children,
+		sx={},
 		borderWidth = .14,
 		padding = 2,
 		backgroundColor = '#191d29',
 		borderRadius = 2,
 		gradientColors = [ '#15ddea88', '#9dfe0088' ],
 		gradientDegree = 0,
-		sx={}
+		clipPath = '' 					// clipPath= 'polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%)'
 	} = props
 
 	return (
 		<Box sx={{
 			...sx,
-			p: .14
+			flex: 1, // required if this component used inside flex box
 		}}>
 			<Box sx={{
 				backgroundImage: `linear-gradient(${gradientDegree}deg, ${[...gradientColors]})`,
 				p: borderWidth,
 				borderRadius,
+
+				clipPath, 				// clipPath= 'polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%)'
 			}}>
 
 				<Box sx={{ 
@@ -40,6 +44,8 @@ const BoxWrapper = (props: Props) => {
 					backgroundColor,
 					padding,
 					borderRadius,
+
+					clipPath,
 				}}>
 					<Box sx={{ flex: 1 }}>
 						{children}

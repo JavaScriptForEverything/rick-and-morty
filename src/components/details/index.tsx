@@ -75,19 +75,16 @@ const DetailsPage = () => {
 							
 						}}>
 							<BoxWrapper gradientDegree={135} sx={{
-								// width: 250,
-								// height: 250
 								ml: { xs: 0, sm:  `${avatarWidth / 2 }px` }
-							}} >
+							}} 
+							>
 								<img 
 									src='/images/screenshot.jpg'
 									alt='/images/screenshot.jpg'
-									// width={'100%'}
-									// height={'100%'}
 									width={avatarWidth}
 									height={avatarWidth}
 									style={{
-										borderRadius: 4
+										borderRadius: 4,
 									}}
 								/>
 							</BoxWrapper>
@@ -110,7 +107,6 @@ const DetailsPage = () => {
 						}}>
 							{section_1_items.map(({ src, status, title }) => (
 									<BoxWrapper key={title} 
-										sx={{ flex: 1, }} 
 										gradientDegree={
 											Math.floor( Math.random() * 360 )
 										}
@@ -128,7 +124,7 @@ const DetailsPage = () => {
 
 						<Box id='item-2-3'>
 							{section_2_3_items.map( item => (
-								<BoxWrapper key={item.title} sx={{ flex: 1, mt: 4 }} gradientDegree={180}>
+								<BoxWrapper key={item.title} sx={{ mt: 4 }} gradientDegree={180}>
 									<Box key={item.title} >
 										<Box sx={{ width: 	{ xs: 8*4, sm: 8*6 } }} >
 											<img 
@@ -159,7 +155,7 @@ const DetailsPage = () => {
 						</Box>
 
 						<Box id='item-4'>
-							<BoxWrapper sx={{ flex: 1, mt: 4 }} gradientDegree={180}>
+							<BoxWrapper sx={{ mt: 4 }} gradientDegree={180}>
 								<Box >
 									<Box sx={{ width: 	{ xs: 8*4, sm: 8*6 } }} >
 										<img 
