@@ -29,7 +29,6 @@ const BoxWrapper = (props: Props) => {
 	return (
 		<Box sx={{
 			...sx,
-			flex: 1, // required if this component used inside flex box
 		}}>
 			<Box sx={{
 				backgroundImage: `linear-gradient(${gradientDegree}deg, ${[...gradientColors]})`,

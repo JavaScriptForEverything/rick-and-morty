@@ -1,7 +1,9 @@
 import { Cast } from '../home/section/component'
 
 
+import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
+import BoxWrapper from '../details/boxWrapper'
 
 
 export const MeetingContainer = () => {
@@ -9,21 +11,22 @@ export const MeetingContainer = () => {
 	return (
 		<Box>
 
-			<Box sx={{
-				display: 'flex',
-				flexWrap: 'wrap',
-				gap: 4,
-			}}>
-
+			<Grid container spacing={6}>
 				{[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map(cast => (
-					<Box key={cast} sx={{  }}>
-						<Cast key={cast}
-							url='/images/screenshot.jpg'
-							primary='Cast Name'
-						/>
-					</Box>
+					<Grid key={cast} item xs={6} sm={4} md={3}>
+						<BoxWrapper 
+							padding={1}
+							clipPath= 'polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%)'
+							gradientDegree={135}
+						>
+							<Cast key={cast} 
+								url='/images/screenshot.jpg' 
+								primary='Cast Name' 
+							/>
+						</BoxWrapper>
+					</Grid>
 				))}
-			</Box>
+			</Grid>
 
 		</Box>
 	)

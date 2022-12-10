@@ -10,6 +10,7 @@ import MenuItem from '@mui/material/MenuItem'
 
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import SearchIcon from '@mui/icons-material/Search'
+import BoxWrapper from '../details/boxWrapper'
 
 const buttonBackgroundColor = {
 	color: 'white',
@@ -18,24 +19,24 @@ const buttonBackgroundColor = {
 		backgroundColor: '#15ddea',
 	}
 }
-const searchContainer = {
-	display: 'flex',
-}
 const searchButtonStyles = {
 	borderRadius: 0,
 	borderTopLeftRadius: '20px 20px',
 	borderBottomLeftRadius: '20px 20px',
+	px: 4,
+	fontSize: { xs: '10px', sm: '16px' },
 
 	textTransform: 'capitalize',
 	...buttonBackgroundColor
 }
 const inputStyles = {
+	fontSize: { xs: '10px', sm: '16px' },
+
 	backgroundColor: '#2d313d',
 	color: '#cccccc',
-	border: '1px solid #7d8b56',
 	borderTopRightRadius: '20px 20px',
 	borderBottomRightRadius: '20px 20px',
-	width: 200
+	width: '100%',
 }
 const menuStyles = {
 	...buttonBackgroundColor,
@@ -45,6 +46,7 @@ const menuStyles = {
 const HeroTitle = () => {
 	const [ open, setOpen ] = useState(false)
 	const [ anchorEl, setAnchorEl ] = useState<HTMLElement | null>(null)
+	const [ searchButtonLabel, setSearchButtonLabel ] = useState('Location')
 
 
 	const closeHandler = () => {
@@ -55,9 +57,9 @@ const HeroTitle = () => {
 		setAnchorEl(evt.currentTarget)
 		setOpen(true)
 	}
-	const menuItemClickHandler = (item: string) => () => {
+	const menuItemClickHandler = (label: string) => () => {
 		closeHandler()
-		console.log({ item })
+		setSearchButtonLabel(label)
 	}
 
 	return (
@@ -68,17 +70,28 @@ const HeroTitle = () => {
 		}}>
 			<Typography variant='h4' sx={{ 
 				color: '#15ddea',
-				fontWeight: 'bold'
+				// fontWeight: 'bold',
+				fontSize: { xs: '20px', sm: '40px' },
+				mt: 1
 			}}>The Cast</Typography>
 
-			<Box sx={searchContainer}>
+			<BoxWrapper 
+				padding={0} 
+				borderRadius={20}
+				gradientDegree={180}
+				sx={{
+					width: { xs: '250px', sm: '400px' }
+				}}
+			>
+
+			<Box sx={{ display: 'flex' }}>
 				<Button
 					variant='contained'
 					endIcon={<KeyboardArrowDownIcon />}
 					disableElevation
 					sx={searchButtonStyles}
 					onClick={searchButtonClick}
-				>Location</Button>
+				>{searchButtonLabel}</Button>
 				<InputBase 
 					sx={inputStyles}
 					placeholder='Search'
@@ -92,6 +105,7 @@ const HeroTitle = () => {
 					}
 				/>
 			</Box>
+			</BoxWrapper>
 
 			<Menu
 				open={open}
@@ -106,7 +120,7 @@ const HeroTitle = () => {
 						divider={index !== arr.length - 1}
 						onClick={menuItemClickHandler(item)}
 					>
-						<Typography>Characters</Typography>
+						<Typography>{item}</Typography>
 					</MenuItem>
 				))}
 			</Menu>

@@ -1,23 +1,24 @@
+import type { SxProps } from '@mui/material'
+
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
-import ClipContainer from '../../../clipContainer'
 
 type Props = {
-	url: string
-	primary: string
-	title?: string
+	url: string,
+	primary: string,
+	title?: string,
+	sx?: SxProps
 }
-export const Cast = ({ url, primary, title }: Props) => {
+export const Cast = ({ sx={}, url, primary, title }: Props) => {
 
 	return (
-		<ClipContainer borderWidth={2} >
-			<Box sx={{ m: 1, }}>
+			<Box sx={sx}>
 				<img 
 					// src='/images/screenshot.jpg'
 					src={url}
 					alt='cast url'
 					width='100%'
-					height={120}
+					height='100%'
 					style={{ borderRadius: 5 }}
 					title={title}
 				/>
@@ -25,6 +26,5 @@ export const Cast = ({ url, primary, title }: Props) => {
 					<Typography color='inherit'>{primary}</Typography>
 				</Box>
 			</Box>
-		</ClipContainer>
 	)
 }

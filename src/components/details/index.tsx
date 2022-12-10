@@ -107,6 +107,7 @@ const DetailsPage = () => {
 						}}>
 							{section_1_items.map(({ src, status, title }) => (
 									<BoxWrapper key={title} 
+										sx={{ flex: 1 }}
 										gradientDegree={
 											Math.floor( Math.random() * 360 )
 										}
@@ -124,7 +125,7 @@ const DetailsPage = () => {
 
 						<Box id='item-2-3'>
 							{section_2_3_items.map( item => (
-								<BoxWrapper key={item.title} sx={{ mt: 4 }} gradientDegree={180}>
+								<BoxWrapper key={item.title} sx={{ flex: 1, mt: 4 }} gradientDegree={180}>
 									<Box key={item.title} >
 										<Box sx={{ width: 	{ xs: 8*4, sm: 8*6 } }} >
 											<img 
