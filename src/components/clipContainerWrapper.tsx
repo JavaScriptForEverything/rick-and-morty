@@ -19,7 +19,7 @@ const ClipContainerWrapper = (props: Props) => {
 	} = props
 
 	const [ container, setContainer ] = useState<HTMLElement | null>(null)
-	const [ scrollLeft, setScrollLeft ] = useState(0)
+	const [ , setScrollLeft ] = useState(0)
 	
 
 	console.log(container?.scrollLeft)

@@ -15,10 +15,10 @@ Font-Size:
 
 
 Font-Weight: 
-	. Regular 		: Very light
-	. Medium 			: Light
-	. SemiBold 		: Regular
-	. Bold 				: Bold
+	. Regular 		: means: Very light
+	. Medium 			: means: Light
+	. SemiBold 		: means: Regular
+	. Bold 				: means: Bold
 
 
 Font-Face:

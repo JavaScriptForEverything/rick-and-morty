@@ -1,4 +1,4 @@
-import BoxWrapper from '../../../details/boxWrapper'
+// import BoxWrapper from '../../../details/boxWrapper'
 
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'

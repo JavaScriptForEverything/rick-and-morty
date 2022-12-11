@@ -8,8 +8,7 @@ import Button from '@mui/material/Button'
 const SectionContainer = () => {
 
 	return (
-		<Box>
-
+		<Box sx={{ mt: 4 }}>
 			<Box sx={{
 				display: 'flex',
 				justifyContent: 'space-between',
@@ -24,17 +23,17 @@ const SectionContainer = () => {
 				}}>View All</Button>
 			</Box>
 
-			<Box sx={{ p: 1 }}>
+			<Box sx={{ mt: 0 }}>
 				<MeetingContainer />
 			</Box>
 
-			<Box sx={{ p: 1, mt: 8 }}>
+			<Box sx={{ mt: 8 }}>
 				<Typography sx={{ fontSize: { xs: 16, sm: 20 } }}>Episodes</Typography>
 				<EpisodeContainer />
 			</Box>
 
 			{/* [ LocationContainer is copied versiom of EpisodeContainer ] */}
-			<Box sx={{ p: 1, mt: 8 }}>
+			<Box sx={{ mt: 8 }}>
 				<Typography sx={{ fontSize: { xs: 16, sm: 20 } }}>Locations</Typography>
 				<LocationContainer />
 			</Box>

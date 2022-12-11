@@ -14,7 +14,10 @@ const ScrollWrapper = ({ children, sx={} }: Props) => {
 	// const items = [ ...new Array(12) ]
 
 	return (
-		<Box sx={sx}>
+		<Box sx={{
+			...sx,
+			position: 'relative' 		
+		}}>
 			<Box sx={{
 				// border: '1px solid red',
 				display: 'flex',
@@ -22,7 +25,6 @@ const ScrollWrapper = ({ children, sx={} }: Props) => {
 				alignItems: 'center',
 				overflowX: 'auto',
 
-				// position: 'relative' 		
 			}}>
 
 			<Box sx={{
@@ -44,9 +46,11 @@ const ScrollWrapper = ({ children, sx={} }: Props) => {
 				justifyContent: 'space-between',
 			}}>
 			
+			{ false && (
 				<IconButton color='inherit' sx={iconButtonStyle}>
 					<KeyboardArrowLeftIcon />
 				</IconButton>
+			)}
 
 				<IconButton color='inherit' sx={{
 					...iconButtonStyle,
