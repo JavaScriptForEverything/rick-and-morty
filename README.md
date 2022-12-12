@@ -48,7 +48,7 @@
 <br />
 
 
-###### Pages
+###### Project Preview + Video Demo
 ```
 ├── project_design
 │   ├── mobile_1_home-page.png
@@ -57,6 +57,8 @@
 │   ├── web_1_home-page.png
 │   ├── web_2_cast-page.png
 │   └── web_3_cast-details-page.png
+│   
+├── rick-and-morty-project.mp4 			: https://youtu.be/VP_qh7fVLu4
 ```
 
 
@@ -79,3 +81,5 @@
 
 
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VP_qh7fVLu4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
