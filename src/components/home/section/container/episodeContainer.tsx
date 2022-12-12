@@ -8,7 +8,7 @@ import ScrollWrapper from '../../scrollWrapper'
 export const EpisodeContainer = () => {
 
 	return (
-		<ScrollWrapper sx={{ mt: 2 }}>
+		<ScrollWrapper id='episodeContainer' sx={{ mt: 2 }}>
 
 			<Box sx={{
 				display: 'flex',

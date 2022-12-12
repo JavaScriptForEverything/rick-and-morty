@@ -8,17 +8,26 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 
 type Props = {
 	children?: React.ReactNode,
-	sx?: SxProps
+	sx?: SxProps,
+	id: string,
 }
-const ScrollWrapper = ({ children, sx={} }: Props) => {
+const ScrollWrapper = ({ children, sx={}, id }: Props) => {
 	// const items = [ ...new Array(12) ]
+
+	const handleScrollToRight = () => {
+		if(!id) return alert('Add unique id property to work scroll')
+
+		const container = document.getElementById(id)
+		if(!container) return console.log({ container })
+		container.scrollBy(200, 0)
+	}
 
 	return (
 		<Box sx={{
 			...sx,
 			position: 'relative' 		
 		}}>
-			<Box sx={{
+			<Box id={id} sx={{
 				// border: '1px solid red',
 				display: 'flex',
 				justifyContent: 'flex-start',
@@ -54,8 +63,12 @@ const ScrollWrapper = ({ children, sx={} }: Props) => {
 
 				<IconButton color='inherit' sx={{
 					...iconButtonStyle,
-					ml: 'auto'
-				}}>
+					ml: 'auto',
+					mr: { xs: 0, sm: -2 },
+					backgroundColor: '#f2f2f2ff'
+				}}
+				onClick={handleScrollToRight}
+				>
 					<KeyboardArrowRightIcon />
 				</IconButton>
 

@@ -8,7 +8,7 @@ import ScrollWrapper from '../../scrollWrapper'
 export const LocationContainer = () => {
 
 	return (
-		<ScrollWrapper sx={{ mt: 2 }}>
+		<ScrollWrapper id='locationContainer' sx={{ mt: 2 }}>
 			<Box sx={{
 				display: 'flex',
 				gap: 2,
