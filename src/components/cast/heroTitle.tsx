@@ -47,6 +47,7 @@ const HeroTitle = () => {
 	const [ open, setOpen ] = useState(false)
 	const [ anchorEl, setAnchorEl ] = useState<HTMLElement | null>(null)
 	const [ searchButtonLabel, setSearchButtonLabel ] = useState('Location')
+	const [ searchValue, setSearchValue ] = useState('')
 
 
 	const closeHandler = () => {
@@ -60,6 +61,16 @@ const HeroTitle = () => {
 	const menuItemClickHandler = (label: string) => () => {
 		closeHandler()
 		setSearchButtonLabel(label)
+	}
+
+	const changeHandler = (evt: React.ChangeEvent<HTMLInputElement>) => {
+		setSearchValue(evt.target.value)
+	}
+
+	const handleSearchForm = (evt: React.FormEvent<HTMLFormElement>) => {
+		evt.preventDefault()
+
+		console.log({ searchButtonLabel, searchValue })
 	}
 
 	return (
@@ -84,6 +95,7 @@ const HeroTitle = () => {
 				}}
 			>
 
+				<form onSubmit={handleSearchForm}>
 			<Box sx={{ display: 'flex' }}>
 				<Button
 					variant='contained'
@@ -92,6 +104,7 @@ const HeroTitle = () => {
 					sx={searchButtonStyles}
 					onClick={searchButtonClick}
 				>{searchButtonLabel}</Button>
+
 				<InputBase 
 					sx={inputStyles}
 					placeholder='Search'
@@ -103,8 +116,12 @@ const HeroTitle = () => {
 						}} />
 					</InputAdornment>
 					}
+
+					value={searchValue}
+					onChange={changeHandler}
 				/>
 			</Box>
+				</form>
 			</BoxWrapper>
 
 			<Menu

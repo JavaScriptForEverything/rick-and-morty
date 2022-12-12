@@ -1,3 +1,6 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
@@ -30,18 +33,27 @@ const buttonStyle = {
 	borderRadius: 20,
 	color: '#15ddea',
 	background: '#191d29',
+	cursor: 'default',
 	'&:hover' : {
-		background: '#191d29ee',
+		background: '#191d29',
 	}
 }
 
 const Pagination = () => {
+	const [ page, setPage ] = useState(1)
+	const navigate = useNavigate()
+
+	const totalPage = 42
 
 	const prevClickHandler = () => {
-		console.log('prev')
+		if(page <= 1 ) return
+		setPage(oldPage => oldPage - 1)
+		navigate(`/cast?page=${page - 1}`)
 	}
 	const nextClickHandler = () => {
-		console.log('next')
+		if(page >= totalPage) return
+		setPage(oldPage => oldPage + 1)
+		navigate(`/cast?page=${page + 1}`)
 	}
 
 	return (
@@ -53,12 +65,17 @@ const Pagination = () => {
 			mb: 4
 		}}>
 			<Typography>Page</Typography>			
-			<WestIcon onClick={prevClickHandler} sx={ 0 ? activeIconStyle : inActiveIconStyle} />
+			<WestIcon onClick={prevClickHandler} sx={ page > 1 ? activeIconStyle : inActiveIconStyle} />
 			<Box sx={buttonContainerStyle}>
-				<Button variant='outlined' sx={buttonStyle}>1</Button>
+				<Button 
+					variant='outlined' 
+					sx={buttonStyle}
+					disableFocusRipple
+					disableRipple
+				>{page}</Button>
 			</Box>
 			<EastIcon onClick={nextClickHandler} sx={activeIconStyle} />
-			<Typography>of 42</Typography>			
+			<Typography>of {totalPage}</Typography>			
 		</Box>
 	)
 }
