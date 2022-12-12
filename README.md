@@ -1,29 +1,81 @@
 # Testting app for Challenge
 
 
-## Available Scripts
+<div style={
+	display: flex;
+	gap: 8px;
+}>
 
-In the project directory, you can run:
+<img
+	width = "100%"
+	src="https://github.com/JavaScriptForEverything/next-amazona/blob/master/public/project_design/web_1_home-page.png"
+	alt="web_1_home-page.png"
+/>
+<img
+	width = "100%"
+	src="https://github.com/JavaScriptForEverything/next-amazona/blob/master/public/project_design/web_2_cast-page.png"
+	alt="web_2_cast-page.png"
+/>
+<img
+	width = "100%"
+	src="https://github.com/JavaScriptForEverything/next-amazona/blob/master/public/project_design/web_3_cast-details-page.png"
+	alt="web_3_cast-details-page.png"
+/>
+</div>
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<div style={
+	display: flex;
+	gap: 8px;
+}>
+<img
+	width = "100%"
+	src="https://github.com/JavaScriptForEverything/next-amazona/blob/master/public/project_design/mobile_1_home-page.png"
+	alt="mobile_1_home-page.png"
+/>
+<img
+	width = "100%"
+	src="https://github.com/JavaScriptForEverything/next-amazona/blob/master/public/project_design/mobile_2_cast-page.png"
+	alt="mobile_2_cast-page.png"
+/>
+<img
+	width = "100%"
+	src="https://github.com/JavaScriptForEverything/next-amazona/blob/master/public/project_design/mobile_3_cast-details-page.png"
+	alt="mobile_3_cast-details-page.png"
+/>
+</div>
+<br />
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+###### Pages
+```
+├── project_design
+│   ├── mobile_1_home-page.png
+│   ├── mobile_2_cast-page.png
+│   ├── mobile_3_cast-details-page.png
+│   ├── web_1_home-page.png
+│   ├── web_2_cast-page.png
+│   └── web_3_cast-details-page.png
+```
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##### Test Your CSS Skills
+	. Primary focus is the CSS in React Application
+	. Some Real Challanging: Which will sharpen your skills
+	. All the require files and links will be available in the `/public/PDF` folder
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##### This Project Uses Bellow Technologies
+	. React 	: With react-router-dom
+	. TypeScript
+	. Redux Toolkit
+
+
+##### Routes (Pages)
+	. Home 		: /
+	. Cast  	: /cast
+	. Case Details 	: /cast/id
+
+
+

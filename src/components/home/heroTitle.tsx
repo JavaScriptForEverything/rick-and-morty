@@ -24,7 +24,6 @@ const HeroTitle = () => {
 
 			<Box sx={{
 				mt: 8,
-
 				position: 'relative'
 			}} >
 
@@ -61,19 +60,17 @@ const HeroTitle = () => {
 					/>
 				</Box>
 
+
+
+
 				<Box sx={{
 					// border: '1px solid red',
 					display: 'inline-flex',
 
-					// width: { xs: bubbleImageWidthXS, md: bubbleImageWidthMD },
-					width: { xs: 200, md: 300 },
+					width: { xs: 180, md: 300 },
 					position: 'absolute',
-					// top: { xs: -bubbleImageWidthXS/2, md: -bubbleImageWidthMD/2 },
-					// right: { xs: -bubbleImageWidthXS/2, md: -bubbleImageWidthMD/2 },
-					top: { xs: 20, md: 200 },
-					right: { xs: -50, md: -20 },
-					// ml: { xs: 1, md: 10 }, 
-					// mt: { xs: 1, md: 5 }, 
+					top: { xs: 40, md: 200 },
+					right: { xs: -10, md: -20 },
 				}}>
 					<img 
 						src='/media_asset/home_page/hero/Gun.png'
@@ -81,6 +78,11 @@ const HeroTitle = () => {
 						width='100%'
 					/>
 				</Box>
+
+
+
+
+
 
 				<Box sx={{
 					border: '1px solid red',
@@ -128,6 +130,13 @@ const HeroTitle = () => {
 				</Box>
 
 			</Box>
+
+
+
+
+
+
+
 
 			<Box sx={{
 				display: 'flex',
