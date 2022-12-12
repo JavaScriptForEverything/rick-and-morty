@@ -31,6 +31,7 @@ export const MeetingContainer = () => {
 					<Cast key={cast} 
 						url='/images/screenshot.jpg' 
 						primary='cast name'
+						path={`/cast/${cast}`}
 					/>
 				</BoxWrapper>
 			))}

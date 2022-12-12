@@ -2,21 +2,38 @@ import type { SxProps } from '@mui/material'
 
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
+import { useNavigate } from 'react-router-dom'
 
 type Props = {
 	url: string,
 	primary?: string,
 	title?: string,
 	sx?: SxProps
+	path?: string
 }
-export const Cast = ({ sx={}, url, primary='', title }: Props) => {
+export const Cast = (props: Props) => {
+	const { 
+		sx={}, 
+		url, 
+		primary='', 
+		title = '',
+		path = ''
+	} = props
+
+	const navigate = useNavigate()
 
 	return (
-			<Box sx={sx}>
+			<Box 
+				sx={{
+					...sx,
+					cursor: path ? 'pointer' : 'default'
+				}}
+				onClick={() => path && navigate(path)}
+			>
 				<Box sx={{
 					// border: '1px solid red',
 					display: 'inline-flex',
-					height: { xs: 120, sm: 100 }
+					height: { xs: 120, sm: 100 },
 				}}>
 					<img 
 						// src='/images/screenshot.jpg'

@@ -37,20 +37,13 @@ const section_2_3_items = [
 	},
 ]
 
-const DetailsPage = () => {
+const Details = () => {
 
 	const avatarWidth = 200
 
 	return (
 		<>
-		<Box sx={{
-			backgroundColor: '#191d29',
-			color: 'white',
-			backgroundImage: 'url("/media_asset/cast_details/background/Background.png")',
-			backgroundPosition: 'center',
-			backgroundAttachment: 'fixed',
-			backgroundRepeat: 'no-repeat',
-		}}>
+		<Box>
 			<Header />
 
 			<Grid container spacing={2} sx={{ p: 1, mt: { xs: 4, sm: 8 } }}>
@@ -228,4 +221,4 @@ const DetailsPage = () => {
 		</>
 	)
 }
-export default DetailsPage
+export default Details

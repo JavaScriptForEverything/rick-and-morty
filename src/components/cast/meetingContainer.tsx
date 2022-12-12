@@ -22,6 +22,7 @@ export const MeetingContainer = () => {
 							<Cast key={cast} 
 								url='/images/screenshot.jpg' 
 								primary='Cast Name' 
+								path={`/cast/${cast}`}
 							/>
 						</BoxWrapper>
 					</Grid>

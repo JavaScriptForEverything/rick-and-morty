@@ -1,30 +1,19 @@
 import Header from './header'
 // import Footer from './footer'
 import HeroTitle from './heroTitle'
+import SectionContainer from './home'
 
 import Box from '@mui/material/Box'
-import SectionContainer from './home'
 
 
 const Home = () => {
 
 	return (
-		<Box sx={{
-			// backgroundColor: '#191d29',
-			// color: 'white',
-			// backgroundImage: 'url("/media_asset/home_page/background/Background.png")',
-			// backgroundPosition: 'center',
-			// backgroundAttachment: 'fixed',
-			// backgroundRepeat: 'no-repeat',
-		}}>
+		<Box>
 			<Header />
-
 			<HeroTitle />
 			<SectionContainer />
-
-
 			{/* <Footer /> */}
-
 		</Box>
 	)
 }

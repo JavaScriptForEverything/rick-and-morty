@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { EpisodeContainer, LocationContainer, MeetingContainer } from './section/container'
 
 
@@ -16,11 +17,17 @@ const SectionContainer = () => {
 				p: 1
 			}}>
 				<Typography variant='h6' >Meet The Cast</Typography>
-				<Button variant='outlined' sx={{ 
-					color: '#fff', 
-					border: '1px solid #65871c',
-					textTransform: 'capitalize'
-				}}>View All</Button>
+				<Button 
+					component={Link}
+					to='/cast'
+
+					variant='outlined' 
+					sx={{ 
+						color: '#fff', 
+						border: '1px solid #65871c',
+						textTransform: 'capitalize'
+					}}
+				>View All</Button>
 			</Box>
 
 			<Box sx={{ mt: 0 }}>

@@ -93,44 +93,38 @@ const HeroTitle = () => {
 					ml: '10%',
 					filter: { xs: 'blur(20px)', sm: 'blur(50px)' },
 					opacity: .8,
-
-				}}>
-
-				</Box>
-
+				}} />
 
 				<Box sx={{
 					display: 'flex',
 					justifyContent: { xs: 'flex-start', sm: 'center' },
 					alignItems: 'center',
 					gap: 2,
-
 				}}>
-
-				<Typography sx={{
-					fontFamily: 'custom-bold',
-					textTransform: 'uppercase',
-					fontSize,
-					fontStyle: 'italic',
-				}}>THE</Typography>
-				<Box sx={{
-					height: fontSize,
-					mt: -2
-				}}>
-					<img 
-						src='/media_asset/home_page/hero/portal.png'
-						alt='/media_asset/home_page/hero/portal.png'
-						height={'100%'}
-					/>
-				</Box>
-				<Typography sx={{
-					fontFamily: 'custom-bold',
-					fontSize,
-					backgroundImage: 'linear-gradient(90deg, #52e97e 0%, #14d9e5)',
-					backgroundClip: 'text',
-					WebkitTextFillColor: 'transparent',
-					position: 'relative'
-				}}>RICK &</Typography>
+					<Typography sx={{
+						fontFamily: 'custom-bold',
+						textTransform: 'uppercase',
+						fontSize,
+						fontStyle: 'italic',
+					}}>THE</Typography>
+					<Box sx={{
+						height: fontSize,
+						mt: -2
+					}}>
+						<img 
+							src='/media_asset/home_page/hero/portal.png'
+							alt='/media_asset/home_page/hero/portal.png'
+							height={'100%'}
+						/>
+					</Box>
+					<Typography sx={{
+						fontFamily: 'custom-bold',
+						fontSize,
+						backgroundImage: 'linear-gradient(90deg, #52e97e 0%, #14d9e5)',
+						backgroundClip: 'text',
+						WebkitTextFillColor: 'transparent',
+						position: 'relative'
+					}}>RICK &</Typography>
 				</Box>
 
 			</Box>
@@ -192,9 +186,9 @@ const HeroTitle = () => {
 						borderRadius: '20px',
 						px: 2,
 						whiteSpace: 'nowrap'
-						// flex: 1,
 					}}
 					startIcon={<PlayCircleOutlineIcon />}
+					onClick={() => alert('watch What ?')}
 					>Watch Now</Button>
 				</Box>
 
