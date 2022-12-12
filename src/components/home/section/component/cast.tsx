@@ -33,7 +33,8 @@ export const Cast = (props: Props) => {
 				<Box sx={{
 					// border: '1px solid red',
 					display: 'inline-flex',
-					height: { xs: 120, sm: 100 },
+					// height: { xs: 120, sm: 100 },
+					height: 140
 				}}>
 					<img 
 						// src='/images/screenshot.jpg'
