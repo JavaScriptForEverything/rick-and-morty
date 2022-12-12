@@ -1,45 +1,60 @@
+import { useEffect } from 'react'
+import * as characterReducer from '../../store/characterReducer'
+import { useAppDispatch, useAppSelector } from '../../store/hooks'
+
 import Header from '../home/header'
 
 import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import BoxWrapper from './boxWrapper'
+import { useParams } from 'react-router-dom'
 
-const section_1_items = [
-	{
-		src: '/media_asset/cast_details/Icons/png/Status.png',
-		status: 'status',
-		title: 'Alive'
-	},
-	{
-		src: '/media_asset/cast_details/Icons/png/Species.png',
-		status: 'species',
-		title: 'Human'
-	},
-	{
-		src: '/media_asset/cast_details/Icons/png/Gender.png',
-		status: 'gender',
-		title: 'Male'
-	},
-]
-const section_2_3_items = [
-	{
-		src: '/media_asset/cast_details/Icons/png/Origin.png',
-		status: 'Origin',
-		title: 'Earth (C-137)',
-		icon: '/media_asset/cast_details/Icons/png/Redirect.png',
-	},
-	{
-		src: '/media_asset/cast_details/Icons/png/Location.png',
-		status: 'Last Known Location',
-		title: 'Citadel Of Ricks',
-		icon: '/media_asset/cast_details/Icons/png/Redirect.png',
-	},
-]
+	// const section_2_3_items = [
+	// 	{
+	// 		src: '/media_asset/cast_details/Icons/png/Origin.png',
+	// 		status: 'Origin',
+	// 		title: character.origin.name,
+	// 		icon: '/media_asset/cast_details/Icons/png/Redirect.png',
+	// 	},
+	// 	{
+	// 		src: '/media_asset/cast_details/Icons/png/Location.png',
+	// 		status: 'Last Known Location',
+	// 		title: character.location.name,
+	// 		icon: '/media_asset/cast_details/Icons/png/Redirect.png',
+	// 	},
+	// ]
+const avatarWidth = 200
 
 const Details = () => {
+	const { page } = useParams()
+	const dispatch = useAppDispatch()
+	const { character } = useAppSelector(state => state.character)
 
-	const avatarWidth = 200
+	useEffect(() => {
+		dispatch(characterReducer
+			.getCharacterById(`https://rickandmortyapi.com/api/character/${page}`))
+	}, [dispatch, page])
+
+	const section_1_items = [
+		{
+			src: '/media_asset/cast_details/Icons/png/Status.png',
+			status: character.status,
+			title: 'Alive'
+		},
+		{
+			src: '/media_asset/cast_details/Icons/png/Species.png',
+			status: 'species',
+			title: character.species
+		},
+		{
+			src: '/media_asset/cast_details/Icons/png/Gender.png',
+			status: 'gender',
+			title: character.gender
+		},
+	]
+
+
 
 	return (
 		<>
@@ -55,28 +70,25 @@ const Details = () => {
 						mb: { xs: 2, sm: 0 }
 					}}>
 						<Typography 
-							// variant='h4'
 							sx={{
 								color: '#15ddea',
 								fontFamily: 'custom-bold',
 								fontSize: { xs: 24, sm: 28 },
 								mb: 2
 							}}
-						>Rick Sanchez</Typography>
+						>{character.name}</Typography>
 						<Box sx={{
 							display: 'flex',
 							justifyContent: 'space-evenly',
 							alignItems: 'center',
-							// gap: 5
-							
 						}}>
 							<BoxWrapper gradientDegree={135} sx={{
 								ml: { xs: 0, sm:  `${avatarWidth / 2 }px` }
 							}} 
 							>
 								<img 
-									src='/images/screenshot.jpg'
-									alt='/images/screenshot.jpg'
+									src={character.image}
+									alt={character.image}
 									width={avatarWidth}
 									height={avatarWidth}
 									style={{
@@ -92,7 +104,8 @@ const Details = () => {
 							}} />
 						</Box>
 					</Box>
-			</Grid>
+				</Grid>
+
 				<Grid item xs={12} sm={6}>
 
 					<Box id='right-section'>
@@ -126,7 +139,7 @@ const Details = () => {
 						</Box>
 
 						<Box id='item-2-3'>
-							{section_2_3_items.map( item => (
+							{/* {section_2_3_items.map( item => (
 								<BoxWrapper key={item.title} sx={{ flex: 1, mt: 4 }} gradientDegree={180}>
 									<Box key={item.title} >
 										<Box sx={{ width: 	{ xs: 8*4, sm: 8*6 } }} >
@@ -159,7 +172,75 @@ const Details = () => {
 										</Box>
 									</Box>
 								</BoxWrapper>
-							))}
+							))} */}
+
+
+								<BoxWrapper sx={{ flex: 1, mt: 4 }} gradientDegree={180}>
+									<Box>
+										<Box sx={{ width: 	{ xs: 8*4, sm: 8*6 } }} >
+											<img 
+												src='/media_asset/cast_details/Icons/png/Origin.png'
+												alt='/media_asset/cast_details/Icons/png/Origin.png'
+												width='100%' 
+											/>	
+										</Box>
+										<Typography sx={{ 
+											fontSize: { xs: 10, sm: 16 },
+											fontFamily: 'custom-regular'
+										}}>Origin</Typography>
+										<Box sx={{
+											display: 'flex',
+											justifyContent: 'space-between',
+											alignItems: 'center',
+										}}>
+											<Typography sx={{ 
+												fontSize: { xs: 20, sm: 24 },
+												fontFamily: 'custom-medium'
+											}}>{character.origin.name}</Typography>
+											<Box sx={{ width: { xs: 8*3, sm: 8*4 }, mr: 2 }} >
+												<img 
+													src= '/media_asset/cast_details/Icons/png/Redirect.png'
+													alt= '/media_asset/cast_details/Icons/png/Redirect.png'
+													width='100%' 
+												/>	
+											</Box>
+										</Box>
+									</Box>
+								</BoxWrapper>
+
+								<BoxWrapper sx={{ flex: 1, mt: 4 }} gradientDegree={180}>
+									<Box>
+										<Box sx={{ width: 	{ xs: 8*4, sm: 8*6 } }} >
+											<img 
+												src='/media_asset/cast_details/Icons/png/Location.png'
+												alt='/media_asset/cast_details/Icons/png/Location.png'
+												width='100%' 
+											/>	
+										</Box>
+										<Typography sx={{ 
+											fontSize: { xs: 10, sm: 16 },
+											fontFamily: 'custom-regular'
+										}}>Last Known Location</Typography>
+										<Box sx={{
+											display: 'flex',
+											justifyContent: 'space-between',
+											alignItems: 'center',
+										}}>
+											<Typography sx={{ 
+												fontSize: { xs: 20, sm: 24 },
+												fontFamily: 'custom-medium'
+											}}>{character.location.name}</Typography>
+											<Box sx={{ width: { xs: 8*3, sm: 8*4 }, mr: 2 }} >
+												<img 
+													src= '/media_asset/cast_details/Icons/png/Redirect.png'
+													alt= '/media_asset/cast_details/Icons/png/Redirect.png'
+													width='100%' 
+												/>	
+											</Box>
+										</Box>
+									</Box>
+								</BoxWrapper>
+
 
 						</Box>
 

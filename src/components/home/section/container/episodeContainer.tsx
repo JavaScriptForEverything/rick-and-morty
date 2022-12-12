@@ -1,4 +1,5 @@
 import { Episode } from '../component'
+import { useAppSelector } from '../../../../store/hooks'
 
 import Box from '@mui/material/Box'
 import BoxWrapper from '../../../details/boxWrapper'
@@ -6,6 +7,7 @@ import ScrollWrapper from '../../scrollWrapper'
 
 
 export const EpisodeContainer = () => {
+	const { episodes } = useAppSelector(state => state.episode)
 
 	return (
 		<ScrollWrapper id='episodeContainer' sx={{ mt: 2 }}>
@@ -16,8 +18,8 @@ export const EpisodeContainer = () => {
 				overflowX: 'auto'
 			}}>
 
-				{[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map(episode => (
-					<BoxWrapper key={episode} 
+				{episodes?.map(episode => (
+					<BoxWrapper key={episode.id} 
 						clipPath= 'polygon(0 0, 100% 0, 100% 60%, 80% 100%, 0 100%)'
 						gradientDegree={135}
 						sx={{
@@ -26,8 +28,8 @@ export const EpisodeContainer = () => {
 						}}
 					> 
 							<Episode 
-								primary={`title ${episode}`}
-								subTitle={`SubTitle ${episode}`}
+								primary={episode.episode}
+								subTitle={episode.name}
 							/>
 					</BoxWrapper> 
 				))}

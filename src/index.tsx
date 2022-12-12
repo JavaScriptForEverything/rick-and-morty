@@ -7,6 +7,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import CssBaseline from '@mui/material/CssBaseline'
+import { Provider } from 'react-redux';
+import { store } from './store';
 
 
 const root = ReactDOM.createRoot(
@@ -14,10 +16,12 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-		<BrowserRouter>
-			<CssBaseline />
-			<App />
-		</BrowserRouter>
+		<Provider store={store}>
+			<BrowserRouter>
+				<CssBaseline />
+				<App />
+			</BrowserRouter>
+		</Provider>
   </React.StrictMode>
 );
 

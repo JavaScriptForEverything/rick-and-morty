@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import * as characterReducer from '../../store/characterReducer'
 
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
@@ -7,6 +8,7 @@ import Button from '@mui/material/Button'
 
 import EastIcon from '@mui/icons-material/EastRounded'
 import WestIcon from '@mui/icons-material/WestRounded'
+import { useAppDispatch, useAppSelector } from '../../store/hooks'
 
 const activeIconStyle = {
 	border: '1px solid #191d29',
@@ -42,18 +44,24 @@ const buttonStyle = {
 const Pagination = () => {
 	const [ page, setPage ] = useState(1)
 	const navigate = useNavigate()
+	const dispatch = useAppDispatch()
+	const { info } = useAppSelector(state => state.character)
 
-	const totalPage = 42
+	const totalPage = info?.pages || 0
 
 	const prevClickHandler = () => {
 		if(page <= 1 ) return
 		setPage(oldPage => oldPage - 1)
 		navigate(`/cast?page=${page - 1}`)
+
+		if(info?.prev) dispatch(characterReducer.getCharacters(info.prev))
 	}
 	const nextClickHandler = () => {
 		if(page >= totalPage) return
 		setPage(oldPage => oldPage + 1)
 		navigate(`/cast?page=${page + 1}`)
+		
+		if(info?.next) dispatch(characterReducer.getCharacters(info.next))
 	}
 
 	return (
