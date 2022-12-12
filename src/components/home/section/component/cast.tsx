@@ -13,19 +13,29 @@ export const Cast = ({ sx={}, url, primary='', title }: Props) => {
 
 	return (
 			<Box sx={sx}>
-				<img 
-					// src='/images/screenshot.jpg'
-					src={url}
-					alt='cast url'
-					width='100%'
-					// width={200}
-					height={140}
-					style={{ borderRadius: 5 }}
-					title={title}
-				/>
+				<Box sx={{
+					// border: '1px solid red',
+					display: 'inline-flex',
+					height: { xs: 120, sm: 100 }
+				}}>
+					<img 
+						// src='/images/screenshot.jpg'
+						src={url}
+						alt='cast url'
+						width='100%'
+						style={{ borderRadius: 5 }}
+						title={title}
+					/>
+				</Box>
 				{!!primary && (
-					<Box sx={{ my: 0 }}>
-						<Typography color='inherit'>{primary}</Typography>
+					<Box sx={{ my: 0, }}>
+						<Typography sx={{
+							color: 'inherit',
+							textTransform: 'capitalize',
+							fontSize: { xs: 10, sm: 16 },
+							fontFamily: { xs: 'custom-medium', sm: 'custom-regular' }
+						}}
+						>{primary}</Typography>
 					</Box>
 				)}
 			</Box>

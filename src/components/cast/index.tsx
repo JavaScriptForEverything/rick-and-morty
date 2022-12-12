@@ -25,7 +25,7 @@ const CastPage = () => {
 			<Box sx={{ mt: 4, p: 2 }}>
 				<HeroTitle />
 			</Box>
-			<Box sx={{ mt: 4, p: 2 }}>
+			<Box>
 				<MeetingContainer />
 			</Box>
 

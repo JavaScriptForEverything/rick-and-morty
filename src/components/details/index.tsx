@@ -62,9 +62,12 @@ const DetailsPage = () => {
 						mb: { xs: 2, sm: 0 }
 					}}>
 						<Typography 
-							variant='h4'
+							// variant='h4'
 							sx={{
 								color: '#15ddea',
+								fontFamily: 'custom-bold',
+								fontSize: { xs: 24, sm: 28 },
+								mb: 2
 							}}
 						>Rick Sanchez</Typography>
 						<Box sx={{
@@ -116,8 +119,14 @@ const DetailsPage = () => {
 											<Box sx={{ width: 	{ xs: 8*4, sm: 8*6 } }} >
 												<img src={src} alt={src} width='100%' />	
 											</Box>
-											<Typography sx={{ fontSize: { xs: 10, sm: 16 } }}>{status}</Typography>
-											<Typography sx={{ fontSize: { xs: 20, sm: 24 } }}>{title}</Typography>
+											<Typography sx={{ 
+												fontSize: { xs: 10, sm: 16 },
+												fontFamily: 'custom-regular'
+										 	}}>{status}</Typography>
+											<Typography sx={{ 
+												fontSize: { xs: 20, sm: 24 }, 
+												fontFamily: 'custom-medium'
+											}}>{title}</Typography>
 										</Box>
 									</BoxWrapper>
 							))}
@@ -134,13 +143,19 @@ const DetailsPage = () => {
 												width='100%' 
 											/>	
 										</Box>
-										<Typography sx={{ fontSize: { xs: 10, sm: 16 } }}>{item.status}</Typography>
+										<Typography sx={{ 
+											fontSize: { xs: 10, sm: 16 },
+											fontFamily: 'custom-regular'
+										}}>{item.status}</Typography>
 										<Box sx={{
 											display: 'flex',
 											justifyContent: 'space-between',
 											alignItems: 'center',
 										}}>
-											<Typography sx={{ fontSize: { xs: 20, sm: 24 } }}>{item.title}</Typography>
+											<Typography sx={{ 
+												fontSize: { xs: 20, sm: 24 },
+												fontFamily: 'custom-medium'
+											}}>{item.title}</Typography>
 											<Box sx={{ width: { xs: 8*3, sm: 8*4 }, mr: 2 }} >
 												<img 
 													src={item.icon}
@@ -157,7 +172,7 @@ const DetailsPage = () => {
 
 						<Box id='item-4'>
 							<BoxWrapper sx={{ mt: 4 }} gradientDegree={180}>
-								<Box >
+								<Box>
 									<Box sx={{ width: 	{ xs: 8*4, sm: 8*6 } }} >
 										<img 
 											src='/media_asset/cast_details/Icons/png/Episode.png'
@@ -165,14 +180,20 @@ const DetailsPage = () => {
 											width='100%' 
 										/>	
 									</Box>
-									<Typography sx={{ fontSize: { xs: 10, sm: 16 } }}>Episode(S)</Typography>
+									<Typography sx={{ 
+										fontSize: { xs: 10, sm: 16 },
+										fontFamily: 'custom-regular'
+									}}>Episode(S)</Typography>
 									<Box sx={{
 										flex: 1,
 										display: 'flex',
 										justifyContent: 'space-between',
 										alignItems: 'center'
 									}}>
-										<Box sx={{ fontSize: { xs: 20, sm: 24 } }}>
+										<Box sx={{ 
+											fontSize: { xs: 20, sm: 24 },
+											fontFamily: 'custom-medium'
+										}}>
 											<ul>
 												<li>Pilot</li>
 												<li>Lawnmover Dog</li>
