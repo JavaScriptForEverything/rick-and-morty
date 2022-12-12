@@ -6,19 +6,20 @@
 	gap: 8px;
 }>
 
+
 <img
 	width = "100%"
-	src="https://github.com/JavaScriptForEverything/next-amazona/blob/master/public/project_design/web_1_home-page.png"
+	src="https://github.com/JavaScriptForEverything/rick-and-morty/blob/master/public/project_design/web_1_home-page.png"
 	alt="web_1_home-page.png"
 />
 <img
 	width = "100%"
-	src="https://github.com/JavaScriptForEverything/next-amazona/blob/master/public/project_design/web_2_cast-page.png"
+	src="https://github.com/JavaScriptForEverything/rick-and-morty/blob/master/public/project_design/web_2_cast-page.png"
 	alt="web_2_cast-page.png"
 />
 <img
 	width = "100%"
-	src="https://github.com/JavaScriptForEverything/next-amazona/blob/master/public/project_design/web_3_cast-details-page.png"
+	src="https://github.com/JavaScriptForEverything/rick-and-morty/blob/master/public/project_design/web_3_cast-details-page.png"
 	alt="web_3_cast-details-page.png"
 />
 </div>
@@ -31,17 +32,17 @@
 }>
 <img
 	width = "100%"
-	src="https://github.com/JavaScriptForEverything/next-amazona/blob/master/public/project_design/mobile_1_home-page.png"
+	src="https://github.com/JavaScriptForEverything/rick-and-morty/blob/master/public/project_design/mobile_1_home-page.png"
 	alt="mobile_1_home-page.png"
 />
 <img
 	width = "100%"
-	src="https://github.com/JavaScriptForEverything/next-amazona/blob/master/public/project_design/mobile_2_cast-page.png"
+	src="https://github.com/JavaScriptForEverything/rick-and-morty/blob/master/public/project_design/mobile_2_cast-page.png"
 	alt="mobile_2_cast-page.png"
 />
 <img
 	width = "100%"
-	src="https://github.com/JavaScriptForEverything/next-amazona/blob/master/public/project_design/mobile_3_cast-details-page.png"
+	src="https://github.com/JavaScriptForEverything/rick-and-morty/blob/master/public/project_design/mobile_3_cast-details-page.png"
 	alt="mobile_3_cast-details-page.png"
 />
 </div>
@@ -82,4 +83,4 @@
 
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VP_qh7fVLu4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Watch the video](https://github.com/JavaScriptForEverything/rick-and-morty/blob/master/public/project_design/web_1_home-page.png)](https://www.youtube.com/embed/VP_qh7fVLu4)
